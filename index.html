@@ -1,26 +1,24 @@
 <html>
 	<head>
 		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js">
-
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-
-		</script>
+		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+		
 		<script src="window.js"></script>
 	</head>
 	<body>
 		<a-scene id="app">
 			<a-asset>
 				
-				<!---->
+				<!--->
 				<video id="video" src="/assets/teste.mp4" autoplay loop="true"></video>
 				<!---->
+				<img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
 				
 			</a-asset>
 			
+			<a-sky id="image-360" radius="10" src="#city"></a-sky>
 			
-			<!-- -->
+			<!-- ->
 			<a-videosphere src="#video" rotation="0 0 0"></a-videosphere>
 			<!-- -->
 			
