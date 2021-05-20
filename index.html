@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js">
+
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+
+		</script>
+		<script src="window.js"></script>
+	</head>
+	<body>
+		<a-scene id="app">
+			<a-asset>
+				
+				<!---->
+				<video id="video" src="/assets/teste.mp4" autoplay loop="true"></video>
+				<!---->
+				
+			</a-asset>
+			
+			
+			<!-- -->
+			<a-videosphere src="#video" rotation="0 0 0"></a-videosphere>
+			<!-- -->
+			
+			<script>
+				
+				// Data sample of how to use window slider
+				// TODO : ADD rotation and "time"
+				slide = {
+					"id" : "myid" ,
+					"position" : "0 3 -4" ,
+					"rotation" : "0 0 0" ,
+					"size" : 
+					{
+						"width" : 6 ,
+						"height" : 4 ,
+					},
+					"title" : "my slide" ,
+					"slides" : 
+					[
+					 	
+						{
+							"type" : "image" ,
+							"url" : "/assets/vr.png" ,
+							"width" : 6 ,
+							"height" : 4 ,
+						},
+						{
+							"type" : "text" ,
+							"value" : "text 1" ,
+							"size" : 10 ,
+						},
+						{ 
+							"type" : "text" , 
+							"value" : "text 2\n2\n3\nlala lele" ,
+							"size" : 10 ,
+						},
+						{ 
+							"type" : "text" ,
+							"value" : "text 3" ,
+							"size" : 8 ,
+						},
+					] 	
+				};
+				
+				app = document.getElementById("app")
+				
+				// script to generate an slider
+				x = document.createElement("a-entity")
+				x.setAttribute("window","json:"+JSON.stringify(slide))				
+				app.appendChild(x)
+				
+			</script>
+			
+
+			<!-- Camera + Cursor. -->
+			<a-camera>
+				<a-cursor
+				id="cursor"
+				animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+				animation__clickreset="property: scale; to: 1 1 1; dur: 1; startEvents: animationcomplete__click"
+				animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+				</a-cursor>
+			</a-camera>
+		</a-scene>
+		
+	</body>
+</html>
