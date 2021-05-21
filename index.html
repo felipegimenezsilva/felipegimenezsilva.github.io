@@ -3,7 +3,7 @@
 		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
 		
-		<script src="window.js"></script>
+		<script src="components/slide.js"></script>
 	</head>
 	<body>
 		<a-scene id="app">
@@ -32,33 +32,118 @@
 					"rotation" : "0 0 0" ,
 					"size" : 
 					{
-						"width" : 4 ,
-						"height" : 3 ,
+						"width" : 8 ,
+						"height" : 5 ,
 					},
-					"title" : "my slide" ,
+					"title" : "Materials" ,
 					"slides" : 
 					[
-					 	
+					 	{ 
+							"title" : "Experiment",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+						},
 						{
+							"title" : "Test tube 100mL",
 							"type" : "image" ,
-							"url" : "assets/vr.png" ,
-							"width" : 4 ,
+							"url" : "assets/test_tube_100_ml.jpg" ,
+							"width" : 5 ,
 							"height" : 3 ,
 						},
 						{
-							"type" : "text" ,
-							"value" : "text 1" ,
-							"size" : 10 ,
+							"title" : "Erlenmeyer flask 250mL",
+							"type" : "image" ,
+							"url" : "assets/erlenmeyer_flask_250_ml.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
 						},
-						{ 
-							"type" : "text" , 
-							"value" : "text 2\n2\n3\nlala lele" ,
-							"size" : 10 ,
+						{
+							"title" : "Becker 100mL",
+							"type" : "image" ,
+							"url" : "assets/becker_100_ml.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
 						},
-						{ 
-							"type" : "text" ,
-							"value" : "text 3" ,
-							"size" : 8 ,
+						{
+							"title" : "Rubber bulbs",
+							"type" : "image" ,
+							"url" : "assets/rubber_bulbs.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},
+						{
+							"title" : "Volumetric pipette 100mL",
+							"type" : "image" ,
+							"url" : "assets/volumetric_pipette_100_ml.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
+						},
+						{
+							"title" : "Burette 25 mL",
+							"type" : "image" ,
+							"url" : "assets/burette_25_ml.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},
+						{
+							"title" : "Magnetic stir bar",
+							"type" : "image" ,
+							"url" : "assets/magnetic_stir_bar.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
+						},
+						{
+							"title" : "Magnetic stirrer mixer",
+							"type" : "image" ,
+							"url" : "assets/magnetic_stirrer_mixer.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
+						},
+						{
+							"title" : "pH electrode",
+							"type" : "image" ,
+							"url" : "assets/ph_electrode.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},{
+							"title" : "Digital pH meter",
+							"type" : "image" ,
+							"url" : "assets/digital_ph_meter.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},{
+							"title" : "Hot plate stirrer",
+							"type" : "image" ,
+							"url" : "assets/hot_plate_stirrer.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
+						},{
+							"title" : "Burette support",
+							"type" : "image" ,
+							"url" : "assets/burette_support.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},
+						{
+							"title" : "Aqueous solution of HCl",
+							"type" : "image" ,
+							"url" : "assets/aqueous_solution_hcl.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},{
+							"title" : "Aqueous solution of NaOH",
+							"type" : "image" ,
+							"url" : "assets/aqueous_solution_naoh.jpg" ,
+							"width" : 3 ,
+							"height" : 5 ,
+						},
+						{
+							"title" : "Phenolphthalein",
+							"type" : "image" ,
+							"url" : "assets/phenolphthalein.jpg" ,
+							"width" : 5 ,
+							"height" : 3 ,
 						},
 					] 	
 				};
@@ -67,7 +152,7 @@
 				
 				// script to generate an slider
 				x = document.createElement("a-entity")
-				x.setAttribute("window","json:"+JSON.stringify(slide))				
+				x.setAttribute("a-slide","json:"+JSON.stringify(slide))				
 				app.appendChild(x)
 				
 			</script>
