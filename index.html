@@ -10,7 +10,7 @@
 			<a-asset>
 				
 				<!--  -->
-				<video id="video" crossorigin="anonymous" src="https://felipegimenezsilva.github.io/assets/teste.mp4" autoplay loop="true"></video>
+				<video id="video" crossorigin="anonymous" src="https://felipegimenezsilva.github.io/assets/teste.mp4" autoplay loop="false"></video>
 				
 				<img id="img_1" src="assets/test_tube_100_ml.jpg"></img>
 				<img id="img_2" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
@@ -41,6 +41,7 @@
 				// Data sample of how to use window slider
 				// TODO : ADD rotation and "time"
 				slide = {
+					"video_id" : "#video",
 					"id" : "myid" ,
 					"position" : "0 3 -8" ,
 					"rotation" : "0 0 0" ,
@@ -57,6 +58,8 @@
 							"type" : "text" ,
 							"value" : "simple description\nhere" ,
 							"size" : 8 ,
+							"second" : 0,
+							"triggered" : false,
 						},
 						{
 							"title" : "Test tube 100mL",
@@ -64,6 +67,8 @@
 							"url" : "#img_1" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 3,
+							"triggered" : false,
 						},
 						{
 							"title" : "Erlenmeyer flask 250mL",
@@ -71,6 +76,8 @@
 							"url" : "#img_2" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 5,
+							"triggered" : false,
 						},
 						{
 							"title" : "Becker 100mL",
@@ -78,6 +85,8 @@
 							"url" : "#img_3" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 7,
+							"triggered" : false,
 						},
 						{
 							"title" : "Rubber bulbs",
@@ -85,6 +94,8 @@
 							"url" : "#img_4" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 9,
+							"triggered" : false,
 						},
 						{
 							"title" : "Volumetric pipette 100mL",
@@ -92,6 +103,8 @@
 							"url" : "#img_5" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 11,
+							"triggered" : false,
 						},
 						{
 							"title" : "Burette 25 mL",
@@ -99,6 +112,8 @@
 							"url" : "#img_6" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 13,
+							"triggered" : false,
 						},
 						{
 							"title" : "Magnetic stir bar",
@@ -106,6 +121,8 @@
 							"url" : "#img_7" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 15,
+							"triggered" : false,
 						},
 						{
 							"title" : "Magnetic stirrer mixer",
@@ -113,6 +130,8 @@
 							"url" : "#img_8" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 18,
+							"triggered" : false,
 						},
 						{
 							"title" : "pH electrode",
@@ -120,24 +139,32 @@
 							"url" : "#img_9" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 20,
+							"triggered" : false,
 						},{
 							"title" : "Digital pH meter",
 							"type" : "image" ,
 							"url" : "#img_10" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 22,
+							"triggered" : false,
 						},{
 							"title" : "Hot plate stirrer",
 							"type" : "image" ,
 							"url" : "#img_11" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 24,
+							"triggered" : false,
 						},{
 							"title" : "Burette support",
 							"type" : "image" ,
 							"url" : "#img_12" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 25,
+							"triggered" : false,
 						},
 						{
 							"title" : "Aqueous solution of HCl",
@@ -145,12 +172,16 @@
 							"url" : "#img_13" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 26,
+							"triggered" : false,
 						},{
 							"title" : "Aqueous solution of NaOH",
 							"type" : "image" ,
 							"url" : "#img_14" ,
 							"width" : 3 ,
 							"height" : 5 ,
+							"second" : 28,
+							"triggered" : false,
 						},
 						{
 							"title" : "Phenolphthalein",
@@ -158,6 +189,8 @@
 							"url" : "#img_15" ,
 							"width" : 5 ,
 							"height" : 3 ,
+							"second" : 30,
+							"triggered" : false,
 						},
 					] 	
 				};
@@ -202,7 +235,7 @@
 			// Watch for currentTime changes
 			video.addEventListener('timeupdate', () => {
 			  // Find the time to be triggered
-			  let time = timeframes.find(i => i.time == Math.floor(video.currentTime) && !i.triggered)
+			  let time = slide.slides.find(i => i.second == Math.floor(video.currentTime) && !i.triggered)
 			  if (time) {
 				// A time was found that hasn't been triggered
 				time.triggered = true
@@ -213,11 +246,12 @@
 
 			// Listen for the event
 			window.addEventListener('VideoTimelapse', (e) => {
-			  console.log(`${e.detail.time} seconds have passed`)
+			  //console.log(`${e.detail.seconds} seconds have passed`)
+			  console.log(`${e.detail.type}`)
 			})
 
 			// The user moved the slider, reset the 'triggered' property back to false
-			video.addEventListener('seeked', () => timeframes.forEach(i => {i.triggered = false}))
+			video.addEventListener('seeked', () => slide.slides.forEach(i => {i.triggered = false}))
 			
 		</script>
 	</body>
