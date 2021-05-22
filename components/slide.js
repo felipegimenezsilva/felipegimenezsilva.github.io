@@ -14,7 +14,6 @@ AFRAME.registerComponent('slide_content',{
 		var el = this.el;
 		json = JSON.parse(data.json)		
 		data.actual_slide = 0 ;
-				
 		content = document.createElement('a-entity');
 		
 		// creating background of content and buttons
@@ -163,8 +162,10 @@ AFRAME.registerComponent('slide_content',{
 		
 		// Auto change slide
 		window.addEventListener('VideoTimelapse', (e) => {
+		  	if(el.parentElement){
 		  	data.actual_slide = e.detail
 		  	update_content()
+		  	}
 		})
 		
 	},
