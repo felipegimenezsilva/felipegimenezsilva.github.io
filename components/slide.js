@@ -12,8 +12,9 @@ AFRAME.registerComponent('slide_content',{
 		
 		var data = this.data;
 		var el = this.el;
-		json = JSON.parse(data.json)
-						
+		json = JSON.parse(data.json)		
+		data.actual_slide = 0 ;
+				
 		content = document.createElement('a-entity');
 		
 		// creating background of content and buttons
