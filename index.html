@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<a-scene id="app">
-			<a-asset>
+			<a-asset id="assets">
 				
 				<!--  -->
 				<video id="video" crossorigin="anonymous" src="https://felipegimenezsilva.github.io/assets/teste.mp4" autoplay loop="false"></video>
@@ -227,7 +227,7 @@
 				video.play();
 			})
 			
-
+/*
 			// Watch for currentTime changes
 			video.addEventListener('timeupdate', () => {
 			  // Find the time to be triggered
@@ -248,7 +248,7 @@
 
 			// The user moved the slider, reset the 'triggered' property back to false
 			video.addEventListener('seeked', () => slide.slides.forEach(i => {i.triggered = false}))
-			
+			*/
 		</script>
 	</body>
 </html>

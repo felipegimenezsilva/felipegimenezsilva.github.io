@@ -13,8 +13,7 @@ AFRAME.registerComponent('slide_content',{
 		var data = this.data;
 		var el = this.el;
 		json = JSON.parse(data.json)
-		data.actual_slide = 0 ;
-				
+						
 		content = document.createElement('a-entity');
 		
 		// creating background of content and buttons
@@ -139,7 +138,7 @@ AFRAME.registerComponent('slide_content',{
 			element.setAttribute("color","#000000");
 		}
 		
-		function click(element,increment)
+		function click(increment)
 		{
 			next = data.actual_slide + increment
 			if (next < 0 ) { next = json.slides.length -1 };
@@ -156,12 +155,18 @@ AFRAME.registerComponent('slide_content',{
 		
 		left.addEventListener('mouseenter', function() {enter(left);})
 		left.addEventListener('mouseleave', function() {leave(left);})
-		left.addEventListener('click', function() { click(left,-1);} )
+		left.addEventListener('click', function() { click(-1);} )
 		right.addEventListener('mouseenter', function() {enter(right);})
 		right.addEventListener('mouseleave', function() {leave(right);})
-		right.addEventListener('click', function() {click(right,1);})
+		right.addEventListener('click', function() {click(1);})
 		
-	}
+		// Auto change slide
+		window.addEventListener('VideoTimelapse', (e) => {
+		  	data.actual_slide = e.detail
+		  	update_content()
+		})
+		
+	},
 })
 
 AFRAME.registerComponent('a-slide', {
@@ -208,6 +213,7 @@ AFRAME.registerComponent('a-slide', {
 		bar.setAttribute("color","#007bff")
 		bar.appendChild(interrogation);	
 		el.appendChild(bar);
+		
 	},
 	
 	update : function () 
@@ -285,6 +291,7 @@ AFRAME.registerComponent('a-slide', {
   				
   				// creating slide components (content and buttons)
   				content = document.createElement('a-entity')
+  				content.setAttribute("id","content")
   				content.setAttribute("slide_content","json:"+data.json)
   				el.appendChild(content)	
   			}
@@ -306,6 +313,30 @@ AFRAME.registerComponent('a-slide', {
 		  		text = bar.querySelector('a-text');
 		  		text.setAttribute("value",json.title); 
   			}
-  		})
+  		})		
+  		
+  		
+		// sync video time and slides  
+  		// sync video time and slides  
+  		video = document.querySelector(json.video_id)
+  		
+		// The user moved the slider, reset the 'triggered' property back to false
+		video.addEventListener('seeked', () => json.slides.forEach(i => {i.triggered = false}))
+		
+  				// Watch for currentTime changes
+		video.addEventListener('timeupdate', () => {
+		  // Find the time to be triggered
+		  let time = json.slides.find(i => i.second == Math.floor(video.currentTime) && !i.triggered)
+		  if (time) {
+			// A time was found that hasn't been triggered
+			time.triggered = true
+			detail = { detail : json.slides.indexOf(time) }
+			// Send the event to the window
+			window.dispatchEvent(new CustomEvent('VideoTimelapse', detail ))
+		  }
+		})
+		
+		
+		
 	}
 });
