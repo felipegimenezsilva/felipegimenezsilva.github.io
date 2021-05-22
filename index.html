@@ -167,9 +167,42 @@
 			</a-camera>
 		</a-scene>
 		<script>
-			console.log(document.querySelector("#video"))
-			document.querySelector("#video").currentTime = 100
-			document.querySelector("#video").play()
+			//console.log(document.querySelector("#video"))
+			//document.querySelector("#video").currentTime = 100
+			
+			let video = document.querySelector('#video')
+			video.muted = true
+
+			// Times in seconds.
+			const timeframes = [
+			  {time: 0, triggered: false},
+			  {time: 1, triggered: false},
+			  {time: 3, triggered: false},
+			  {time: 30, triggered: false},
+			  {time: 60, triggered: false},
+			  {time: 90, triggered: false}
+			]
+
+			// Watch for currentTime changes
+			video.addEventListener('timeupdate', () => {
+			  // Find the time to be triggered
+			  let time = timeframes.find(i => i.time == Math.floor(video.currentTime) && !i.triggered)
+			  if (time) {
+				// A time was found that hasn't been triggered
+				time.triggered = true
+				// Send the event to the window
+				window.dispatchEvent(new CustomEvent('VideoTimelapse', {detail: time}))
+			  }
+			})
+
+			// Listen for the event
+			window.addEventListener('VideoTimelapse', (e) => {
+			  console.log(`${e.detail.time} seconds have passed`)
+			})
+
+			// The user moved the slider, reset the 'triggered' property back to false
+			video.addEventListener('seeked', () => timeframes.forEach(i => {i.triggered = false}))
+			
 		</script>
 	</body>
 </html>
