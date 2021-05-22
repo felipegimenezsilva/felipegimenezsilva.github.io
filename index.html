@@ -4,6 +4,7 @@
 		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
 		
 		<script src="components/slide.js"></script>
+		<script src="components/video_controls.js"></script>
 	</head>
 	<body>
 		<a-scene id="app">
@@ -11,6 +12,9 @@
 				
 				<!--  -->
 				<video id="video" crossorigin="anonymous" src="https://felipegimenezsilva.github.io/assets/teste.mp4" autoplay loop="false"></video>
+				
+				<img id="pause" src="assets/pause.png"></img>
+				<img id="play" src="assets/play.png"></img>
 				
 				<img id="img_1" src="assets/test_tube_100_ml.jpg"></img>
 				<img id="img_2" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
@@ -32,8 +36,10 @@
 			</a-asset>
 			
 			<a-videosphere id="#sphere" src="#video" rotation="0 0 0" ></a-videosphere>
-			<a-plane id="start_video" position="-3 0 -4">
 			</a-plane>		
+			
+			<a-entity video_controls="video_id:#video" position="-3 0 -4"></a-entity>
+			
 			<script>
 				
 				
@@ -216,39 +222,5 @@
 				</a-cursor>
 			</a-camera>
 		</a-scene>
-		<script>
-			//console.log(document.querySelector("#video"))
-			//document.querySelector("#video").currentTime = 100
-			let video = document.querySelector('#video')
-			video.muted = true
-			
-			// button to play video
-			document.querySelector("#start_video").addEventListener('click',() => {
-				video.play();
-			})
-			
-/*
-			// Watch for currentTime changes
-			video.addEventListener('timeupdate', () => {
-			  // Find the time to be triggered
-			  let time = slide.slides.find(i => i.second == Math.floor(video.currentTime) && !i.triggered)
-			  if (time) {
-				// A time was found that hasn't been triggered
-				time.triggered = true
-				// Send the event to the window
-				window.dispatchEvent(new CustomEvent('VideoTimelapse', {detail: time}))
-			  }
-			})
-
-			// Listen for the event
-			window.addEventListener('VideoTimelapse', (e) => {
-			  //console.log(`${e.detail.seconds} seconds have passed`)
-			  console.log(`${e.detail.type}`)
-			})
-
-			// The user moved the slider, reset the 'triggered' property back to false
-			video.addEventListener('seeked', () => slide.slides.forEach(i => {i.triggered = false}))
-			*/
-		</script>
 	</body>
 </html>

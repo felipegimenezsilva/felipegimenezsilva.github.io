@@ -66,10 +66,19 @@ AFRAME.registerComponent('slide_content',{
 		left.setAttribute("id","left_button")
 		left.setAttribute("height",1)
 		left.setAttribute("width",1)
-		left.setAttribute("position",-(json.size.width*0.5+0.6)+" 0 0")
+		left.setAttribute("position","-1 "+(-json.size.height*0.5+0.5)+" 0.03")
 		left.setAttribute("color","#000000")
-		left.setAttribute("opacity","0.6")
+		left.setAttribute("opacity","0.8")
 		left.setAttribute("transparent",true)
+		
+		
+		left_text = document.createElement("a-text");
+		left_text.setAttribute("value","<");
+		left_text.setAttribute("align","center");
+		left_text.setAttribute("width",12);
+		left_text.setAttribute("position","0 0 0.2")
+		
+		left.appendChild(left_text)
 		slide_background.appendChild(left)
 		
 		// right button to previus content slide
@@ -77,20 +86,38 @@ AFRAME.registerComponent('slide_content',{
 		right.setAttribute("id","right_button")
 		right.setAttribute("height",1)
 		right.setAttribute("width",1)
-		right.setAttribute("position",+(json.size.width*0.5+0.6)+" 0 0")
+		right.setAttribute("position","1 "+(-json.size.height*0.5+0.5)+" 0.03")
 		right.setAttribute("color","#000000")
-		right.setAttribute("opacity","0.6")
+		right.setAttribute("opacity","0.8")
 		right.setAttribute("transparent",true)
+		
+		right_text = document.createElement("a-text");
+		right_text.setAttribute("value",">");
+		right_text.setAttribute("align","center");
+		right_text.setAttribute("width",12);
+		right_text.setAttribute("position","0 0 0.2")
+		
+		right.appendChild(right_text)
 		slide_background.appendChild(right)
 		
+		num = document.createElement('a-plane')
+		num.setAttribute("height",1)
+		num.setAttribute("width",1)
+		num.setAttribute("position","0 "+(-json.size.height*0.5+0.5)+" 0.03")
+		num.setAttribute("color","#000000")
+		num.setAttribute("opacity","0.8")
+		num.setAttribute("transparent",true)
+		
 		slide_number = document.createElement('a-text')
+		slide_number.setAttribute("id","slide_counter")
 		slide_number.setAttribute('size',8)
-		slide_number.setAttribute('position',"0 "+(-json.size.height)+" 0.1")
+		slide_number.setAttribute('position',"0 0 0.2")
 		slide_number.setAttribute('align','center')
 		slide_number.setAttribute('value',"1/"+json.slides.length)
 		
+		num.appendChild(slide_number)
+		slide_background.appendChild(num)
 		content.appendChild(slide_background)
-		content.appendChild(slide_number)
 		el.appendChild(content)
 	},
 	update : function ()
@@ -122,7 +149,7 @@ AFRAME.registerComponent('slide_content',{
 				image_content.setAttribute("height",content_data.height);
 			}
 			
-			slide_number = el.querySelectorAll("a-text")[1]
+			slide_number = el.querySelector("#slide_counter")
 			slide_number.setAttribute("value",(data.actual_slide+1)+"/"+json.slides.length)
 			window_title = el.parentElement.querySelector("a-text")
 			window_title.setAttribute("value",json.slides[data.actual_slide].title)
