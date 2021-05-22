@@ -31,8 +31,9 @@
 				
 			</a-asset>
 			
-			<a-videosphere id="#sphere" src="#video" rotation="0 0 0" autoplay></a-videosphere>
-			
+			<a-videosphere id="#sphere" src="#video" rotation="0 0 0" ></a-videosphere>
+			<a-plane id="start_video" position="-3 0 -4">
+			</a-plane>		
 			<script>
 				
 				
@@ -218,19 +219,14 @@
 		<script>
 			//console.log(document.querySelector("#video"))
 			//document.querySelector("#video").currentTime = 100
-			
 			let video = document.querySelector('#video')
 			video.muted = true
-
-			// Times in seconds.
-			const timeframes = [
-			  {time: 0, triggered: false},
-			  {time: 1, triggered: false},
-			  {time: 3, triggered: false},
-			  {time: 30, triggered: false},
-			  {time: 60, triggered: false},
-			  {time: 90, triggered: false}
-			]
+			
+			// button to play video
+			document.querySelector("#start_video").addEventListener('click',() => {
+				video.play();
+			})
+			
 
 			// Watch for currentTime changes
 			video.addEventListener('timeupdate', () => {
