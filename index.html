@@ -9,20 +9,18 @@
 		<a-scene id="app">
 			<a-asset>
 				
-				<!--
-				<video id="video" crossorigin="anonymous" src="https://streamable.com/ht4txc" autoplay loop="true"></video>
-				-->
-				<img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg"></img>
+				
+				<video id="video" crossorigin="anonymous" src="assets/teste.mp4" autoplay loop="true"></video>
+				
 				
 			</a-asset>
 			
-			<a-sky id="image-360" radius="10" src="#city"></a-sky>
-			
-			<!-- 
-			<a-videosphere src="#video" rotation="0 0 0"></a-videosphere>
-			<!-- -->
+			<a-videosphere id="#sphere" src="#video" rotation="0 0 0"></a-videosphere>
 			
 			<script>
+				
+				
+			
 				
 				// Data sample of how to use window slider
 				// TODO : ADD rotation and "time"
@@ -168,6 +166,10 @@
 				</a-cursor>
 			</a-camera>
 		</a-scene>
-		
+		<script>
+			console.log(document.querySelector("#video"))
+			document.querySelector("#video").currentTime = 100
+			//document.querySelector("#video").pause()
+		</script>
 	</body>
 </html>
