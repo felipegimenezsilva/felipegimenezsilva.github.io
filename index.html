@@ -10,8 +10,8 @@
 		<a-scene id="app">
 			<a-asset id="assets">
 				
-				<!--  -->
-				<video id="video" crossorigin="anonymous" src="https://felipegimenezsilva.github.io/assets/teste.mp4" autoplay loop="false"></video>
+				<!--  src="https://felipegimenezsilva.github.io/assets/teste.mp4"-->
+				<video id="video" crossorigin="anonymous" src="assets/exp_1.mp4" autoplay loop="false"></video>
 				
 				<img id="pause" src="assets/pause.png"></img>
 				<img id="play" src="assets/play.png"></img>
@@ -35,10 +35,10 @@
 				
 			</a-asset>
 			
-			<a-videosphere id="#sphere" src="#video" rotation="0 0 0" ></a-videosphere>
+			<a-videosphere id="#sphere" src="#video" rotation="0 60 0" ></a-videosphere>
 			</a-plane>		
 			
-			<a-entity video_controls="video_id:#video" position="-3 0 -4"></a-entity>
+			<a-entity video_controls="video_id:#video" position="-4 -3 -5" rotation="-90 -0 0"></a-entity>
 			
 			<script>
 				
@@ -50,14 +50,14 @@
 				slide = {
 					"video_id" : "#video",
 					"id" : "myid" ,
-					"position" : "0 3 -8" ,
+					"position" : "0.4 4 -7" ,
 					"rotation" : "0 0 0" ,
 					"size" : 
 					{
 						"width" : 8 ,
 						"height" : 5 ,
 					},
-					"title" : "Materials" ,
+					"title" : "Show Slide" ,
 					"slides" : 
 					[
 					 	{ 

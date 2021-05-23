@@ -21,7 +21,7 @@ AFRAME.registerComponent('slide_content',{
 		slide_background.setAttribute("id","content_background")
 		slide_background.setAttribute("height",json.size.height)
 		slide_background.setAttribute("width",json.size.width)
-		slide_background.setAttribute("position","0 "+(-json.size.height*0.5-0.6)+" 0")
+		slide_background.setAttribute("position","0 "+(-json.size.height*0.5-0.5)+" 0")
 		slide_background.setAttribute("color","#000000")
 		slide_background.setAttribute("opacity","0.8")
 		slide_background.setAttribute("transparent",false)
