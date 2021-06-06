@@ -1,0 +1,284 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+		
+		<script src="components/slide.js"></script>
+		<script src="components/video_controls.js"></script>
+	</head>
+	<body>
+		<a-scene id="app">
+			<a-asset id="assets">
+				
+				<!--  src="https://felipegimenezsilva.github.io/assets/teste.mp4"-->
+				<video id="video" crossorigin="anonymous" src="assets/exp_2.mp4" autoplay loop="false"></video>
+				
+				<img id="pause" src="assets/pause.png"></img>
+				<img id="play" src="assets/play.png"></img>
+				
+				<img id="img_1" src="assets/test_tube_100_ml.jpg"></img>
+				<img id="img_2" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
+				<img id="img_3" src="assets/becker_100_ml.jpg"></img>
+				<img id="img_4" src="assets/rubber_bulbs.jpg"></img>
+				<img id="img_5" src="assets/volumetric_pipette_100_ml.jpg"></img>
+				<img id="img_6" src="assets/burette_25_ml.jpg"></img>
+				<img id="img_7" src="assets/magnetic_stir_bar.jpg"></img>
+				<img id="img_8" src="assets/magnetic_stirrer_mixer.jpg"></img>
+				<img id="img_9" src="assets/ph_electrode.jpg"></img>
+				<img id="img_10" src="assets/digital_ph_meter.jpg"></img>
+				<img id="img_11" src="assets/hot_plate_stirrer.jpg"></img>
+				<img id="img_12" src="assets/burette_support.jpg"></img>
+				<img id="img_13" src="assets/aqueous_solution_hcl.jpg"></img>
+				<img id="img_14" src="assets/aqueous_solution_naoh.jpg"></img>
+				<img id="img_15" src="assets/phenolphthalein.jpg"></img>
+				<img id="img_16" src="assets/final_result_exp_1.jpg"></img>
+				
+				
+			</a-asset>
+			
+			<a-videosphere id="#sphere" src="#video" rotation="0 60 0" ></a-videosphere>
+			</a-plane>		
+			
+			<a-entity video_controls="video_id:#video" position="-3 2.5 -13"></a-entity>
+			
+			<script>
+				
+				
+			
+				
+				// Data sample of how to use window slider
+				// TODO : ADD rotation and "time"
+				slide = {
+					"video_id" : "#video",
+					"id" : "myid" ,
+					"position" : "-3 1 -13" ,
+					"rotation" : "0 0 0" ,
+					"size" : 
+					{
+						"width" : 8 ,
+						"height" : 5 ,
+					},
+					"title" : "Show Slide" ,
+					"slides" : 
+					[
+					 	{ 
+							"title" : "Apresentation",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 0,
+							"triggered" : false,
+						},
+						{
+							"title" : "vidro 1",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 9,
+							"triggered" : false,
+						},
+						{
+							"title" : "lente",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 12,
+							"triggered" : false,
+						},
+						{
+							"title" : "vidro 2",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 15,
+							"triggered" : false,
+						},
+						{
+							"title" : "vidro 3",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 18,
+							"triggered" : false,
+						},
+						{
+							"title" : "vidro 4",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 20,
+							"triggered" : false,
+						},
+						{
+							"title" : "colher",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 23,
+							"triggered" : false,
+						},
+						{
+							"title" : "borracha",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 25,
+							"triggered" : false,
+						},
+						{
+							"title" : "vidro 5",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 28,
+							"triggered" : false,
+						},
+						{
+							"title" : "pano da lente",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 32,
+							"triggered" : false,
+						},
+						{
+							"title" : "funil",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 34,
+							"triggered" : false,
+						},
+						{
+							"title" : "vidro 6",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 38,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "pesagem",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 42,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "preparation 1",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 60+17,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "preparation 2",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 60+52,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "preparation 3",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 2*60+33,
+							"triggered" : false,
+						},						
+						{ 
+							"title" : "preparation 4",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 2*60+53,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "explain 1",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 3*60+10,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "preparation 5",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 3*60+15,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "preparation 6",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 3*60+26,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "filtrando",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 3*60+36,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "finalizando",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 3*60+53,
+							"triggered" : false,
+						},
+						{
+							"title" : "resultado final",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 5 ,
+							"height" : 3 ,
+							"second" : 4*60+10,
+							"triggered" : false,
+						}
+					]
+				};
+				
+				app = document.getElementById("app")
+				
+				// script to generate an slider
+				x = document.createElement("a-entity")
+				x.setAttribute("a-slide","json:"+JSON.stringify(slide))				
+				app.appendChild(x)
+				
+			</script>
+			
+
+			<!-- Camera + Cursor. -->
+			<a-camera>
+				<a-cursor
+				id="cursor"
+				animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+				animation__clickreset="property: scale; to: 1 1 1; dur: 1; startEvents: animationcomplete__click"
+				animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+				</a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>
