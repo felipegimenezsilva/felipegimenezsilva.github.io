@@ -1,4 +1,4 @@
-<html>
+	<html>
 	<head>
 		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
@@ -11,35 +11,33 @@
 			<a-asset id="assets">
 				
 				<!--  src="https://felipegimenezsilva.github.io/assets/teste.mp4"-->
-				<video id="video" crossorigin="anonymous" src="assets/exp_2.mp4" autoplay loop="false"></video>
+				<video id="video" crossorigin="anonymous" src="https://cdn.glitch.com/63682f73-b007-4699-995d-7bbcf39b8f3e%2Fexp_2.mp4?v=1623016109718" autoplay loop="false"></video>
 				
 				<img id="pause" src="assets/pause.png"></img>
 				<img id="play" src="assets/play.png"></img>
 				
-				<img id="img_1" src="assets/test_tube_100_ml.jpg"></img>
-				<img id="img_2" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
-				<img id="img_3" src="assets/becker_100_ml.jpg"></img>
-				<img id="img_4" src="assets/rubber_bulbs.jpg"></img>
-				<img id="img_5" src="assets/volumetric_pipette_100_ml.jpg"></img>
-				<img id="img_6" src="assets/burette_25_ml.jpg"></img>
-				<img id="img_7" src="assets/magnetic_stir_bar.jpg"></img>
-				<img id="img_8" src="assets/magnetic_stirrer_mixer.jpg"></img>
-				<img id="img_9" src="assets/ph_electrode.jpg"></img>
-				<img id="img_10" src="assets/digital_ph_meter.jpg"></img>
-				<img id="img_11" src="assets/hot_plate_stirrer.jpg"></img>
-				<img id="img_12" src="assets/burette_support.jpg"></img>
-				<img id="img_13" src="assets/aqueous_solution_hcl.jpg"></img>
-				<img id="img_14" src="assets/aqueous_solution_naoh.jpg"></img>
-				<img id="img_15" src="assets/phenolphthalein.jpg"></img>
-				<img id="img_16" src="assets/final_result_exp_1.jpg"></img>
-				
+				<img id="img_1" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
+				<img id="img_2" src="assets/watch_glass_filter_paper.jpg"></img>
+				<img id="img_3" src="assets/cylinder_100_ml.jpg"></img>
+				<img id="img_4" src="assets/pasteur_pippete.jpg"></img>
+				<img id="img_5" src="assets/glass_rod.jpg"></img>
+				<img id="img_6" src="assets/spatula.jpg"></img>
+				<img id="img_7" src="assets/rubber_bulbs.jpg"></img>
+				<img id="img_8" src="assets/burette_25_ml.jpg"></img>
+				<!--img id="img_9" src="assets/watch_glass_filter_paper.jpg"></img-->
+				<img id="img_10" src="assets/Buchner_funnel_and_filter_flask.jpg"></img>
+				<!--img id="img_11" src="assets/Buchner_funnel_and_filter_flask.jpg"></img-->
+				<img id="img_12" src="assets/analytical_balance.jpg"></img>
+				<img id="img_13" src="assets/salicylic_Acid.jpg"></img>
+				<img id="img_14" src="assets/hotplate.jpg"></img>
+				<img id="img_15" src="assets/final_result_exp_2.jpg"></img>				
 				
 			</a-asset>
 			
-			<a-videosphere id="#sphere" src="#video" rotation="0 60 0" ></a-videosphere>
+			<a-videosphere id="#sphere" src="#video" rotation="0 -135 0" ></a-videosphere>
 			</a-plane>		
 			
-			<a-entity video_controls="video_id:#video" position="-3 2.5 -13"></a-entity>
+			<a-entity video_controls="video_id:#video" position="5 2.5 -13"></a-entity>
 			
 			<script>
 				
@@ -51,7 +49,7 @@
 				slide = {
 					"video_id" : "#video",
 					"id" : "myid" ,
-					"position" : "-3 1 -13" ,
+					"position" : "5 1 -13" ,
 					"rotation" : "0 0 0" ,
 					"size" : 
 					{
@@ -62,202 +60,202 @@
 					"slides" : 
 					[
 					 	{ 
-							"title" : "Apresentation",
+							"title" : "text 1",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
 							"second" : 0,
 							"triggered" : false,
 						},
 						{
-							"title" : "vidro 1",
+							"title" : "Erlenmeyer flask 250 mL",
 							"type" : "image" ,
 							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"width" : 3 ,
+							"height" : 5 ,
 							"second" : 9,
 							"triggered" : false,
 						},
 						{
-							"title" : "lente",
+							"title" : "Watch glass",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_2" ,
+							"width" : 8 ,
+							"height" : 5 ,
 							"second" : 12,
 							"triggered" : false,
 						},
 						{
-							"title" : "vidro 2",
+							"title" : "cylinder 100 mL ",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_3" ,
+							"width" : 3 ,
+							"height" : 5 ,
 							"second" : 15,
 							"triggered" : false,
 						},
 						{
-							"title" : "vidro 3",
+							"title" : "Pasteur pippete",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_4" ,
+							"width" : 8 ,
+							"height" : 5 ,
 							"second" : 18,
 							"triggered" : false,
 						},
 						{
-							"title" : "vidro 4",
+							"title" : "Glass rod",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
-							"second" : 20,
+							"url" : "#img_5" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 21,
 							"triggered" : false,
 						},
 						{
-							"title" : "colher",
+							"title" : "Spatula",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_6" ,
+							"width" : 8 ,
+							"height" : 5 ,
 							"second" : 23,
 							"triggered" : false,
 						},
 						{
-							"title" : "borracha",
+							"title" : "Rubber bulbs",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_7" ,
+							"width" : 3 ,
+							"height" : 5 ,
 							"second" : 25,
 							"triggered" : false,
 						},
 						{
-							"title" : "vidro 5",
+							"title" : "image ",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_8" ,
+							"width" : 8 ,
+							"height" : 5 ,
 							"second" : 28,
 							"triggered" : false,
 						},
 						{
-							"title" : "pano da lente",
+							"title" : "Filter paper ",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_2" ,
+							"width" : 8 ,
+							"height" : 5 ,
 							"second" : 32,
 							"triggered" : false,
 						},
 						{
-							"title" : "funil",
+							"title" : "Buchner funnel",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_10" ,
+							"width" : 3 ,
+							"height" : 5 ,
 							"second" : 34,
 							"triggered" : false,
 						},
 						{
-							"title" : "vidro 6",
+							"title" : "filter flask",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
+							"url" : "#img_10" ,
+							"width" : 3 ,
+							"height" : 5 ,
 							"second" : 38,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "pesagem",
+							"title" : "text 2",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 42,
+							"second" : 41,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "preparation 1",
+							"title" : "text 3",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 60+17,
+							"second" :  1 * 60 + 16 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "preparation 2",
+							"title" : "text 4",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 60+52,
+							"second" :  1 * 60 + 52 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "preparation 3",
+							"title" : "text 5",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 2*60+33,
-							"triggered" : false,
-						},						
-						{ 
-							"title" : "preparation 4",
-							"type" : "text" ,
-							"value" : "simple description\nhere" ,
-							"size" : 8 ,
-							"second" : 2*60+53,
+							"second" :  2 * 60 + 33 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "explain 1",
+							"title" : "text 6",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 3*60+10,
+							"second" :  2 * 60 + 52 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "preparation 5",
+							"title" : "text 7",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 3*60+15,
+							"second" :  3 * 60 + 10 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "preparation 6",
+							"title" : "text 8",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 3*60+26,
+							"second" :  3 * 60 + 15 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "filtrando",
+							"title" : "text 9",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 3*60+36,
+							"second" :  3 * 60 + 20 ,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "finalizando",
+							"title" : "text 10",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"value" : "text here" ,
 							"size" : 8 ,
-							"second" : 3*60+53,
+							"second" :  3 * 60 + 36 ,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "text 11",
+							"type" : "text" ,
+							"value" : "text here" ,
+							"size" : 8 ,
+							"second" :  3 * 60 + 53 ,
 							"triggered" : false,
 						},
 						{
-							"title" : "resultado final",
+							"title" : "image",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 5 ,
-							"height" : 3 ,
-							"second" : 4*60+10,
+							"url" : "#img_15" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" :  4 * 60 + 11,
 							"triggered" : false,
-						}
-					]
+						},
+					] 	
 				};
 				
 				app = document.getElementById("app")
