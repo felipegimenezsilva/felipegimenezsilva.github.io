@@ -1,0 +1,260 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+		
+		<script src="components/slide.js"></script>
+		<script src="components/video_controls.js"></script>
+	</head>
+	<body>
+		<a-scene id="app">
+			<a-asset id="assets">
+				<video id="video" crossorigin="anonymous" src="https://cdn.glitch.com/63682f73-b007-4699-995d-7bbcf39b8f3e%2Ffinal%20(1).mp4?v=1623668026273" autoplay loop="false"></video>
+				
+				<img id="pause" src="assets/pause.png"></img>
+				<img id="play" src="assets/play.png"></img>
+				
+				<img id="img_1" src="assets/cylinder_100_ml.jpg"></img>
+				<img id="img_2" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
+				<img id="img_3" src="assets/beacker_100_ml.jpg"></img>
+				<img id="img_4" src="assets/rubber_bulbs.jpg"></img>
+				<img id="img_5" src="assets/volumetric_pipette_10_ml.jpg"></img>
+				<img id="img_6" src="assets/burette_25_ml.jpg"></img>
+				<img id="img_7" src="assets/magnetic_bar_remover.jpg"></img>
+				<img id="img_8" src="assets/magnetic_bar.jpg"></img>
+				<img id="img_9" src="assets/ph_electrode.jpg"></img>
+				<img id="img_10" src="assets/digital_ph_meter.jpg"></img>
+				<img id="img_11" src="assets/magnetic_stirrer.jpg"></img>
+				<img id="img_12" src="assets/burette_support.jpg"></img>
+				<img id="img_13" src="assets/aqueous_solution_hcl.jpg"></img>
+				<img id="img_14" src="assets/aqueous_solution_naoh.jpg"></img>
+				<img id="img_15" src="assets/phenolphthalein.jpg"></img>
+				<img id="img_16" src="assets/distilled_water.jpg"></img>
+				<img id="img_17" src="assets/final_result_exp_1.jpg"></img>
+				
+				
+			</a-asset>
+			
+			<a-videosphere id="#sphere" src="#video" rotation="0 -90 0" ></a-videosphere>
+			</a-plane>		
+			
+			<a-entity video_controls="video_id:#video" position="-3 2.5 -13"></a-entity>
+			
+			<script>
+				
+				
+			
+				
+				// Data sample of how to use window slider
+				// TODO : ADD rotation and "time"
+				slide = {
+					"video_id" : "#video",
+					"id" : "myid" ,
+					"position" : "-3 1 -13" ,
+					"rotation" : "0 0 0" ,
+					"size" : 
+					{
+						"width" : 8 ,
+						"height" : 5 ,
+					},
+					"title" : "Show Slide" ,
+					"slides" : 
+					[
+					 	{ 
+							"title" : "Experiment",
+							"type" : "text" ,
+							"value" : "simple description\nhere" ,
+							"size" : 8 ,
+							"second" : 0,
+							"triggered" : false,
+						},
+						{
+							"title" : "Cylinder 100 mL",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 15,
+							"triggered" : false,
+						},
+						{
+							"title" : "Erlenmeyer flask 250 mL",
+							"type" : "image" ,
+							"url" : "#img_2" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 21,
+							"triggered" : false,
+						},
+						{
+							"title" : "Beacker 100 mL",
+							"type" : "image" ,
+							"url" : "#img_3" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 27,
+							"triggered" : false,
+						},
+						{
+							"title" : "Rubber bulbs",
+							"type" : "image" ,
+							"url" : "#img_4" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 33,
+							"triggered" : false,
+						},
+						{
+							"title" : "Volumetric pipette 10 mL",
+							"type" : "image" ,
+							"url" : "#img_5" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 39,
+							"triggered" : false,
+						},
+						{
+							"title" : "Burette 25 mL",
+							"type" : "image" ,
+							"url" : "#img_6" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 46,
+							"triggered" : false,
+						},
+						{
+							"title" : "Magnetic bar remover",
+							"type" : "image" ,
+							"url" : "#img_7" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 53,
+							"triggered" : false,
+						},
+						{
+							"title" : "Magnetic bar",
+							"type" : "image" ,
+							"url" : "#img_8" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 66,
+							"triggered" : false,
+						},
+						{
+							"title" : "pH electrode",
+							"type" : "image" ,
+							"url" : "#img_9" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 72,
+							"triggered" : false,
+						},{
+							"title" : "Digital pH meter",
+							"type" : "image" ,
+							"url" : "#img_10" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 75,
+							"triggered" : false,
+						},{
+							"title" : "Magnetic stirrer",
+							"type" : "image" ,
+							"url" : "#img_11" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 79,
+							"triggered" : false,
+						},{
+							"title" : "Burette support",
+							"type" : "image" ,
+							"url" : "#img_12" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 82,
+							"triggered" : false,
+						},
+						{
+							"title" : "Aqueous solution of HCl",
+							"type" : "image" ,
+							"url" : "#img_13" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 89,
+							"triggered" : false,
+						},{
+							"title" : "Aqueous solution of NaOH",
+							"type" : "image" ,
+							"url" : "#img_14" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 98,
+							"triggered" : false,
+						},
+						{
+							"title" : "Phenolphthalein",
+							"type" : "image" ,
+							"url" : "#img_15" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 104,
+							"triggered" : false,
+						},
+						{
+							"title" : "Distilled water",
+							"type" : "image" ,
+							"url" : "#img_16" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 111,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "preparing all\nequipaments" ,
+							"size" : 8 ,
+							"second" : 120,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Experience",
+							"type" : "text" ,
+							"value" : "..." ,
+							"size" : 8 ,
+							"second" : 290,
+							"triggered" : false,
+						},
+						{
+							"title" : "Result",
+							"type" : "image" ,
+							"url" : "#img_17" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 343,
+							"triggered" : false,
+						},
+					] 	
+				};
+				
+				app = document.getElementById("app")
+				
+				// script to generate an slider
+				x = document.createElement("a-entity")
+				x.setAttribute("a-slide","json:"+JSON.stringify(slide))				
+				app.appendChild(x)
+				
+			</script>
+			
+
+			<!-- Camera + Cursor. -->
+			<a-camera>
+				<a-cursor
+				id="cursor"
+				animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+				animation__clickreset="property: scale; to: 1 1 1; dur: 1; startEvents: animationcomplete__click"
+				animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+				</a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>
