@@ -2,6 +2,7 @@
 	<head>
 		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+		<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 		
 		<script src="components/slide.js"></script>
 		<script src="components/video_controls.js"></script>
@@ -63,11 +64,35 @@
 					"slides" : 
 					[
 					 	{ 
-							"title" : "Experiment",
+							"title" : "Experience",
 							"type" : "text" ,
-							"value" : "simple description\nhere" ,
-							"size" : 8 ,
+							"value" : "Acid-base titration\nusing aqueous\nsolution of HCl" ,
+							"size" : 10 ,
 							"second" : 0,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Experience",
+							"type" : "text" ,
+							"value" : "We want to\ndetermine the\nconcentration of\nHCl." ,
+							"size" : 10 ,
+							"second" : 4,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Experience",
+							"type" : "text" ,
+							"value" : "The concentration\nof the NaOH solution\nis 0.1 mol/dm^3" ,
+							"size" : 10 ,
+							"second" : 7,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Experience",
+							"type" : "text" ,
+							"value" : "This activity must be carried out under\nthe supervision of your chemistry\nteacher, after a careful risk assessment\nof the experimental protocol.",
+							"size" : 10 ,
+							"second" : 10,
 							"triggered" : false,
 						},
 						{
@@ -89,7 +114,7 @@
 							"triggered" : false,
 						},
 						{
-							"title" : "Beacker 100 mL",
+							"title" : "Beaker 100 mL",
 							"type" : "image" ,
 							"url" : "#img_3" ,
 							"width" : 8 ,
@@ -139,7 +164,7 @@
 							"url" : "#img_8" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 66,
+							"second" : 60+6,
 							"triggered" : false,
 						},
 						{
@@ -148,7 +173,7 @@
 							"url" : "#img_9" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 72,
+							"second" : 60+12,
 							"triggered" : false,
 						},{
 							"title" : "Digital pH meter",
@@ -156,7 +181,7 @@
 							"url" : "#img_10" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 75,
+							"second" : 60+15,
 							"triggered" : false,
 						},{
 							"title" : "Magnetic stirrer",
@@ -164,7 +189,7 @@
 							"url" : "#img_11" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 79,
+							"second" : 60+19,
 							"triggered" : false,
 						},{
 							"title" : "Burette support",
@@ -172,24 +197,26 @@
 							"url" : "#img_12" ,
 							"width" : 3 ,
 							"height" : 5 ,
-							"second" : 82,
+							"second" : 60+22,
 							"triggered" : false,
 						},
 						{
-							"title" : "Aqueous solution of HCl",
+							"title" : "Aqueous solution of HCl\n(unknown concentration)",
+							"title_size" : "9",
 							"type" : "image" ,
 							"url" : "#img_13" ,
 							"width" : 3 ,
 							"height" : 5 ,
-							"second" : 89,
+							"second" : 60+29,
 							"triggered" : false,
 						},{
-							"title" : "Aqueous solution of NaOH",
+							"title" : "Aqueous solution of NaOH,\n0.1 mol/dm3",
 							"type" : "image" ,
+							"title_size" : "9",
 							"url" : "#img_14" ,
 							"width" : 3 ,
 							"height" : 5 ,
-							"second" : 98,
+							"second" : 60+38,
 							"triggered" : false,
 						},
 						{
@@ -198,7 +225,7 @@
 							"url" : "#img_15" ,
 							"width" : 3 ,
 							"height" : 5 ,
-							"second" : 104,
+							"second" : 60+44,
 							"triggered" : false,
 						},
 						{
@@ -207,32 +234,113 @@
 							"url" : "#img_16" ,
 							"width" : 3 ,
 							"height" : 5 ,
-							"second" : 111,
+							"second" : 60+51,
 							"triggered" : false,
 						},
 						{ 
 							"title" : "Starting",
 							"type" : "text" ,
-							"value" : "preparing all\nequipaments" ,
+							"value" : "Fill the burette with the\nNaOH solution." ,
 							"size" : 8 ,
-							"second" : 120,
+							"second" : 2*60+2,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "Experience",
+							"title" : "Starting",
 							"type" : "text" ,
-							"value" : "..." ,
+							"value" : "Measure 100 mL of distilled\nwater using the cylinder." ,
 							"size" : 8 ,
-							"second" : 290,
+							"second" : 2*60+24,
 							"triggered" : false,
 						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Transfer part of it to\nthe Erlenmeyer flask." ,
+							"size" : 8 ,
+							"second" : 2*60+42,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Add 10.00 mL of the HCl\nsolution to the Erlenmeyer flask\nusing a pipette." ,
+							"size" : 8 ,
+							"second" : 2*60+56,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Transfer the remaining\nwater from the cylinder to\nthe Erlenmeyer flask." ,
+							"size" : 8 ,
+							"second" : 3*60+53,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Add 5 drops of the\nphenolphthalein indicator\nto the Erlenmeyer flask." ,
+							"size" : 8 ,
+							"second" : 4*60+9,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Add a magnetic bar to\nthe Erlenmeyer flask and start\nthe stirrer." ,
+							"size" : 8 ,
+							"second" : 4*60+35,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Notice the pH electrode\ninside the solution." ,
+							"size" : 8 ,
+							"second" : 4*60+53,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Register the initial pH\nvalue and the initial\nvolume of titrant in\nthe burette." ,
+							"size" : 8 ,
+							"second" : 5*60+0,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Add successive small\nvolumes of the titrant,\nregistering the volume\nand the pH value after\neach addition." ,
+							"size" : 8 ,
+							"second" : 5*60+30,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "As soon as a clear\npink color appears,\nthat persists upon\nagitation, register it." ,
+							"size" : 8 ,
+							"second" : 5*60+40,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Starting",
+							"type" : "text" ,
+							"value" : "Stop adding the NaOH\nsolution when the\npH remains constant." ,
+							"size" : 8 ,
+							"second" : 5*60+45,
+							"triggered" : false,
+						},
+						
 						{
 							"title" : "Result",
 							"type" : "image" ,
 							"url" : "#img_17" ,
 							"width" : 3 ,
 							"height" : 5 ,
-							"second" : 343,
+							"second" : 5*60 + 50,
 							"triggered" : false,
 						},
 					] 	
@@ -247,15 +355,10 @@
 				
 			</script>
 			
-
+			<a-entity camera look-controls mouse-cursor>
 			<!-- Camera + Cursor. -->
 			<a-camera>
-				<a-cursor
-				id="cursor"
-				animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
-				animation__clickreset="property: scale; to: 1 1 1; dur: 1; startEvents: animationcomplete__click"
-				animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
-				</a-cursor>
+				<a-cursor id="cursor"></a-cursor>
 			</a-camera>
 		</a-scene>
 	</body>

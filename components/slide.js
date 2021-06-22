@@ -28,7 +28,10 @@ AFRAME.registerComponent('slide_content',{
 		
 		// change title bar
 		window_title = el.parentElement.querySelector("a-text")
+		title_size = json.slides[data.actual_slide].title_size
+		if (!title_size){title_size = "12"}
 		window_title.setAttribute("value",json.slides[data.actual_slide].title)
+		window_title.setAttribute("width",title_size)
 		
 		// show first content text TODO
 		first_content = json.slides[0] ;
@@ -38,8 +41,8 @@ AFRAME.registerComponent('slide_content',{
 		
 		text_content = document.createElement('a-text');
 		text_content.setAttribute("position","0 0 0.2");
-		text_content.setAttribute("value","first slide")
-		text_content.setAttribute("width","12")
+		text_content.setAttribute("value","first slide");
+		text_content.setAttribute("width","12");
 		text_content.setAttribute("align","center");
 		
 		if (first_content.type == "text")
@@ -152,7 +155,10 @@ AFRAME.registerComponent('slide_content',{
 			slide_number = el.querySelector("#slide_counter")
 			slide_number.setAttribute("value",(data.actual_slide+1)+"/"+json.slides.length)
 			window_title = el.parentElement.querySelector("a-text")
+			title_size = json.slides[data.actual_slide].title_size
+			if (!title_size){title_size = "12"}
 			window_title.setAttribute("value",json.slides[data.actual_slide].title)
+			window_title.setAttribute("width",title_size);
 		}
 		
 		function enter(element)
@@ -341,6 +347,7 @@ AFRAME.registerComponent('a-slide', {
   				// change "slide_title" to "title"
 		  		text = bar.querySelector('a-text');
 		  		text.setAttribute("value",json.title); 
+		  		text.setAttribute("width","12");
   			}
   		})		
   		
