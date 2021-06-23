@@ -1,0 +1,89 @@
+	<html>
+	<head>
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+		
+		<script src="components/slide.js"></script>
+		<script src="components/video_controls.js"></script>
+	</head>
+	<body>
+		<a-scene id="app">
+			<a-asset id="assets">
+				
+				<!--  src="https://felipegimenezsilva.github.io/assets/teste.mp4"-->
+				<video id="video" crossorigin="anonymous" src="https://cdn.glitch.com/63682f73-b007-4699-995d-7bbcf39b8f3e%2Fexp3%20(1).mp4?v=1624452487658" autoplay loop="false"></video>
+				
+				<img id="pause" src="assets/pause.png"></img>
+				<img id="play" src="assets/play.png"></img>
+				
+				<img id="img_1" src="assets/erlenmeyer_flask_250_ml.jpg"></img>			
+				
+			</a-asset>
+			
+			<a-videosphere id="#sphere" src="#video" rotation="0 -70 0" ></a-videosphere>
+			</a-plane>		
+			
+			<a-entity video_controls="video_id:#video" position="5 2.5 -13"></a-entity>
+			
+			<script>
+				
+				
+			
+				
+				// Data sample of how to use window slider
+				// TODO : ADD rotation and "time"
+				slide = {
+					"video_id" : "#video",
+					"id" : "myid" ,
+					"position" : "5 1 -13" ,
+					"rotation" : "0 0 0" ,
+					"size" : 
+					{
+						"width" : 8 ,
+						"height" : 5 ,
+					},
+					"title" : "Show Slide" ,
+					"slides" : 
+					[
+					 	{ 
+							"title" : "text 1",
+							"type" : "text" ,
+							"value" : "text here" ,
+							"size" : 8 ,
+							"second" : 0,
+							"triggered" : false,
+						},
+						{
+							"title" : "Erlenmeyer flask 250 mL",
+							"type" : "image" ,
+							"url" : "#img_1" ,
+							"width" : 3 ,
+							"height" : 5 ,
+							"second" : 9,
+							"triggered" : false,
+						},
+					] 	
+				};
+				
+				app = document.getElementById("app")
+				
+				// script to generate an slider
+				x = document.createElement("a-entity")
+				x.setAttribute("a-slide","json:"+JSON.stringify(slide))				
+				app.appendChild(x)
+				
+			</script>
+			
+
+			<!-- Camera + Cursor. -->
+			<a-camera>
+				<a-cursor
+				id="cursor"
+				animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+				animation__clickreset="property: scale; to: 1 1 1; dur: 1; startEvents: animationcomplete__click"
+				animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+				</a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>

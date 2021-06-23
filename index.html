@@ -1,12 +1,110 @@
 <html>
 <head>
 	<title>VR-school</title>
+	<style>
+		div.blueTable {
+		  border: 1px solid #1C6EA4;
+		  background-color: #EEEEEE;
+		  width: 100%;
+		  text-align: left;
+		  border-collapse: collapse;
+		}
+		.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+		  border: 1px solid #AAAAAA;
+		  padding: 3px 2px;
+		}
+		.divTable.blueTable .divTableBody .divTableCell {
+		  font-size: 13px;
+		}
+		.divTable.blueTable .divTableRow:nth-child(even) {
+		  background: #D0E4F5;
+		}
+		.divTable.blueTable .divTableHeading {
+		  background: #1C6EA4;
+		}
+		.divTable.blueTable .divTableHeading .divTableHead {
+		  font-size: 16px;
+		  font-weight: bold;
+		  color: #FFFFFF;
+		  text-align: left;
+		  border-left: 2px solid #D0E4F5;
+		}
+		.divTable.blueTable .divTableHeading .divTableHead:first-child {
+		  border-left: none;
+		}
+
+		.blueTable .tableFootStyle {
+		  font-size: 14px;
+		}
+		.blueTable .tableFootStyle .links {
+			 text-align: right;
+		}
+		.blueTable .tableFootStyle .links a{
+		  display: inline-block;
+		  background: #1C6EA4;
+		  color: #FFFFFF;
+		  padding: 2px 8px;
+		  border-radius: 5px;
+		}
+		.blueTable.outerTableFooter {
+		  border-top: none;
+		}
+		.blueTable.outerTableFooter .tableFootStyle {
+		  padding: 3px 5px; 
+		}
+		/* DivTable.com */
+		.divTable{ display: table; }
+		.divTableRow { display: table-row; }
+		.divTableHeading { display: table-header-group;}
+		.divTableCell, .divTableHead { display: table-cell;}
+		.divTableHeading { display: table-header-group;}
+		.divTableFoot { display: table-footer-group;}
+		.divTableBody { display: table-row-group;}
+	</style>
 </head>
 <body>
-	experiencias:
-	<br><br>
-	<a href="exp1.html">experiencia 1</a><br>
-	<a href="exp2.html">experiencia 2</a><br>
-	<a href="douro.html">douro</a><br>
+	<h1>VR@School - Lista de links</h1>	
+	<div class="divTable blueTable">
+		<div class="divTableHeading">
+			<div class="divTableRow">
+			<div class="divTableHead">Experiência</div>
+			<div class="divTableHead">VR link</div>
+			<div class="divTableHead">Video link</div>
+			<div class="divTableHead">Status</div>
+		</div>
+	</div>
+	<div class="divTableBody">
+		<div class="divTableRow">
+			<div class="divTableCell">exp 1</div>
+			<div class="divTableCell"><a href="exp1.html">abrir WEB/VR</a></div>
+			<div class="divTableCell"><a href="assets/exp_1.mp4">abrir apenas vídeo 360</a></div>
+			<div class="divTableCell">-</div>
+		</div>
+		<div class="divTableRow">
+			<div class="divTableCell">exp 2</div>
+			<div class="divTableCell"><a href="exp2.html">abrir WEB/VR</a></div>
+			<div class="divTableCell"><a href="https://cdn.glitch.com/63682f73-b007-4699-995d-7bbcf39b8f3e%2Fscene1.mp4?v=1623074932118">abrir apenas vídeo 360</a></div>
+			<div class="divTableCell">-</div>
+		</div>
+		<div class="divTableRow">
+			<div class="divTableCell">exp 3</div>
+			<div class="divTableCell"><a href="exp3.html">abrir WEB/VR</a></div>
+			<div class="divTableCell"><a href="https://cdn.glitch.com/63682f73-b007-4699-995d-7bbcf39b8f3e%2Fexp3%20(1).mp4?v=1624452487658">abrir apenas vídeo 360</a></div>
+			<div class="divTableCell">-</div>
+		</div>
+		<div class="divTableRow">
+			<div class="divTableCell">douro</div>
+			<div class="divTableCell"><a href="douro.html">abrir WEB/VR</a></div>
+			<div class="divTableCell"><a href="https://cdn.glitch.com/63682f73-b007-4699-995d-7bbcf39b8f3e%2Ffinal%20(1).mp4?v=1623668026273">abrir apenas vídeo 360</a></div>
+			<div class="divTableCell">-</div>
+		</div>
+		<div class="divTableRow">
+			<div class="divTableCell">-</div>
+			<div class="divTableCell">-</div>
+			<div class="divTableCell">-</div>
+			<div class="divTableCell">-</div>
+		</div>
+	</div>
+	
 </body>
 </html>
