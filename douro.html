@@ -14,43 +14,32 @@
 				<img id="pause" src="assets/pause.png"></img>
 				<img id="play" src="assets/play.png"></img>
 				
-				<img id="img_1" src="assets/cylinder_100_ml.jpg"></img>
-				<img id="img_2" src="assets/erlenmeyer_flask_250_ml.jpg"></img>
-				<img id="img_3" src="assets/beacker_100_ml.jpg"></img>
-				<img id="img_4" src="assets/rubber_bulbs.jpg"></img>
-				<img id="img_5" src="assets/volumetric_pipette_10_ml.jpg"></img>
-				<img id="img_6" src="assets/burette_25_ml.jpg"></img>
-				<img id="img_7" src="assets/magnetic_bar_remover.jpg"></img>
-				<img id="img_8" src="assets/magnetic_bar.jpg"></img>
-				<img id="img_9" src="assets/ph_electrode.jpg"></img>
-				<img id="img_10" src="assets/digital_ph_meter.jpg"></img>
-				<img id="img_11" src="assets/magnetic_stirrer.jpg"></img>
-				<img id="img_12" src="assets/burette_support.jpg"></img>
-				<img id="img_13" src="assets/aqueous_solution_hcl.jpg"></img>
-				<img id="img_14" src="assets/aqueous_solution_naoh.jpg"></img>
-				<img id="img_15" src="assets/phenolphthalein.jpg"></img>
-				<img id="img_16" src="assets/distilled_water.jpg"></img>
-				<img id="img_17" src="assets/final_result_exp_1.jpg"></img>
+				<img id="img_1" src="assets/douro_imgs/douro_1.jpg"></img>
+				<img id="img_2" src="assets/douro_imgs/douro_2.jpg"></img>
+				<img id="img_3" src="assets/douro_imgs/liquen_1.jpg"></img>
+				<img id="img_4" src="assets/douro_imgs/liquen_2.jpg"></img>
+				<img id="img_5" src="assets/douro_imgs/margens.jpg"></img>
+				<img id="img_6" src="assets/douro_imgs/mapa.jpg"></img>
+				<img id="img_7" src="assets/douro_imgs/douro_liquen_1.jpg"></img>
+				<img id="img_8" src="assets/douro_imgs/douro_liquen_2.jpg"></img>
+				<img id="img_9" src="assets/douro_imgs/douro_liquen_3.jpg"></img>
 				
 				
 			</a-asset>
 			
-			<a-videosphere id="#sphere" src="#video" rotation="0 -90 0" ></a-videosphere>
+			<a-videosphere id="#sphere" src="#video" rotation="0 -110 0" ></a-videosphere>
 			</a-plane>		
 			
-			<a-entity video_controls="video_id:#video" position="-3 2.5 -13"></a-entity>
+			<a-entity video_controls="video_id:#video" position="0 3.5 -8"></a-entity>
 			
 			<script>
-				
-				
-			
-				
+
 				// Data sample of how to use window slider
 				// TODO : ADD rotation and "time"
 				slide = {
 					"video_id" : "#video",
 					"id" : "myid" ,
-					"position" : "-3 1 -13" ,
+					"position" : "0 2 -8" ,
 					"rotation" : "0 0 0" ,
 					"size" : 
 					{
@@ -61,176 +50,172 @@
 					"slides" : 
 					[
 					 	{ 
-							"title" : "Experiment",
-							"type" : "text" ,
-							"value" : "simple description\nhere" ,
+							"title" : "Douro river canyons",
+							"type" : "text",
+							"value" : "in this experience, is\napproached about lichens\nduring a tour of the\ncanyons of the Douro river" ,
 							"size" : 8 ,
-							"second" : 0,
+							"second" : 0*60 + 0,
 							"triggered" : false,
 						},
 						{
-							"title" : "Cylinder 100 mL",
+							"title" : "Map",
 							"type" : "image" ,
-							"url" : "#img_1" ,
-							"width" : 3 ,
+							"url" : "#img_6" ,
+							"width" : 8 ,
 							"height" : 5 ,
 							"second" : 15,
 							"triggered" : false,
 						},
 						{
-							"title" : "Erlenmeyer flask 250 mL",
+							"title" : "Douro river",
 							"type" : "image" ,
-							"url" : "#img_2" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 21,
-							"triggered" : false,
-						},
-						{
-							"title" : "Beacker 100 mL",
-							"type" : "image" ,
-							"url" : "#img_3" ,
+							"url" : "#img_1" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 27,
+							"second" : 0*60 + 30,
 							"triggered" : false,
 						},
 						{
-							"title" : "Rubber bulbs",
+							"title" : "Douro river",
 							"type" : "image" ,
-							"url" : "#img_4" ,
-							"width" : 3 ,
+							"url" : "#img_2" ,
+							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 33,
+							"second" : 0*60 + 45,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Douro river canyons",
+							"type" : "text",
+							"value" : "During the tour, it\nis possible to see the\ntwo banks of the river,\nthe Portuguese and\nthe Spanish." ,
+							"size" : 8 ,
+							"second" : 1*60 + 0,
 							"triggered" : false,
 						},
 						{
-							"title" : "Volumetric pipette 10 mL",
+							"title" : "Douro river banks",
 							"type" : "image" ,
 							"url" : "#img_5" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 39,
+							"second" : 1*60 + 15,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Douro river canyons",
+							"type" : "text",
+							"value" : "on the rocks it\nis possible to see\nsome lichens", 
+							"size" : 8 ,
+							"second" : 1*60 + 30,
 							"triggered" : false,
 						},
 						{
-							"title" : "Burette 25 mL",
+							"title" : "Lichen example",
 							"type" : "image" ,
-							"url" : "#img_6" ,
+							"url" : "#img_3" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 46,
+							"second" : 1*60 + 45,
 							"triggered" : false,
 						},
 						{
-							"title" : "Magnetic bar remover",
+							"title" : "Lichen example",
+							"type" : "image" ,
+							"url" : "#img_4" ,
+							"width" : 8 ,
+							"height" : 5 ,
+							"second" : 2*60 + 0,
+							"triggered" : false,
+						},
+						{
+							"title" : "Lichens in river",
 							"type" : "image" ,
 							"url" : "#img_7" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 53,
+							"second" : 2*60 + 15,
 							"triggered" : false,
 						},
 						{
-							"title" : "Magnetic bar",
+							"title" : "Lichens in river",
 							"type" : "image" ,
 							"url" : "#img_8" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 66,
+							"second" : 2*60 + 30,
 							"triggered" : false,
 						},
 						{
-							"title" : "pH electrode",
+							"title" : "Lichens in river",
 							"type" : "image" ,
 							"url" : "#img_9" ,
 							"width" : 8 ,
 							"height" : 5 ,
-							"second" : 72,
-							"triggered" : false,
-						},{
-							"title" : "Digital pH meter",
-							"type" : "image" ,
-							"url" : "#img_10" ,
-							"width" : 8 ,
-							"height" : 5 ,
-							"second" : 75,
-							"triggered" : false,
-						},{
-							"title" : "Magnetic stirrer",
-							"type" : "image" ,
-							"url" : "#img_11" ,
-							"width" : 8 ,
-							"height" : 5 ,
-							"second" : 79,
-							"triggered" : false,
-						},{
-							"title" : "Burette support",
-							"type" : "image" ,
-							"url" : "#img_12" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 82,
-							"triggered" : false,
-						},
-						{
-							"title" : "Aqueous solution of HCl",
-							"type" : "image" ,
-							"url" : "#img_13" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 89,
-							"triggered" : false,
-						},{
-							"title" : "Aqueous solution of NaOH",
-							"type" : "image" ,
-							"url" : "#img_14" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 98,
-							"triggered" : false,
-						},
-						{
-							"title" : "Phenolphthalein",
-							"type" : "image" ,
-							"url" : "#img_15" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 104,
-							"triggered" : false,
-						},
-						{
-							"title" : "Distilled water",
-							"type" : "image" ,
-							"url" : "#img_16" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 111,
+							"second" : 2*60 + 45,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "Starting",
-							"type" : "text" ,
-							"value" : "preparing all\nequipaments" ,
+							"title" : "Lichens",
+							"type" : "text",
+							"value" : "are living beings\nresulting from the\nsymbiosis between\nfungus and algas." ,
 							"size" : 8 ,
-							"second" : 120,
+							"second" : 3*60 + 0,
 							"triggered" : false,
 						},
 						{ 
-							"title" : "Experience",
-							"type" : "text" ,
-							"value" : "..." ,
+							"title" : "Lichens",
+							"type" : "text",
+							"value" : "they are extremely\nsensitive and can only\ngrow in humid and\nunpolluted places." ,
 							"size" : 8 ,
-							"second" : 290,
+							"second" : 3*60 + 15,
 							"triggered" : false,
 						},
-						{
-							"title" : "Result",
-							"type" : "image" ,
-							"url" : "#img_17" ,
-							"width" : 3 ,
-							"height" : 5 ,
-							"second" : 343,
+						{ 
+							"title" : "Lichens",
+							"type" : "text",
+							"value" : "The presence of\nlichen is synonymous\nof good quality air" ,
+							"size" : 8 ,
+							"second" : 3*60 + 30,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Lichens",
+							"type" : "text",
+							"value" : "lichens are bioindicators\nof air pollution" ,
+							"size" : 8 ,
+							"second" : 3*60 + 45,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Symbiosis",
+							"type" : "text",
+							"value" : "a long-term association\nbetween two organisms\nof different species" ,
+							"size" : 8 ,
+							"second" : 4*60 + 0,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Symbiosis",
+							"type" : "text",
+							"value" : "this relationship can\nbe beneficial to both\nindividuals involved\nor not." ,
+							"size" : 8 ,
+							"second" : 4*60 + 15,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Bioindicators",
+							"type" : "text",
+							"value" : "Bioindicators are\nliving beings that\nrespond in different ways\nto changes in the\nenvironment.",
+							"size" : 8 ,
+							"second" : 4*60 + 30,
+							"triggered" : false,
+						},
+						{ 
+							"title" : "Bioindicators",
+							"type" : "text",
+							"value" : "allow the assessment\nof the quality of the\nenvironment, bioindicators\nhelp to understand the\nconsequences of man's\ninterventions in nature." ,
+							"size" : 8 ,
+							"second" : 4*60 + 45,
 							"triggered" : false,
 						},
 					] 	
