@@ -40,6 +40,12 @@ AFRAME.registerComponent('slide_content',{
 		image_content.setAttribute("position","0 0 0.02");
 		
 		text_content = document.createElement('a-text');
+		
+		text_content.setAttribute("font","/components/custom-msdf/custom-msdf.json")
+		text_content.setAttribute("font-image","/components/custom-msdf/custom.png")
+		text_content.setAttribute("negate","false")
+		text_content.setAttribute("scale","1 1 0.5")
+		
 		text_content.setAttribute("position","0 0 0.2");
 		text_content.setAttribute("value","first slide");
 		text_content.setAttribute("width","12");
@@ -233,11 +239,19 @@ AFRAME.registerComponent('a-slide', {
 		var data = this.data;
 		json = JSON.parse(data.json);
 		
+		// trying to force cache
+		asset = document.createElement('img')
+		asset.setAttribute("src","/components/custom-msdf/custom.png")
+		//asset.setAttribute("id","font")
+		//asset.setAttribute("font-image","/components/custom-msdf/custom.png")
+		document.querySelector("a-asset").appendChild(asset)
+		
 		el.setAttribute("position",json.position)
 		el.setAttribute("rotation",json.rotation)
 		
 		// put a "?" at center of box
 		interrogation = document.createElement('a-text');
+		
 		interrogation.setAttribute("position","0 0 0.1")
 		interrogation.setAttribute("value","?");
 		interrogation.setAttribute("width",12);
